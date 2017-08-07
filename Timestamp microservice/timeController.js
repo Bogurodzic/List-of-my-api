@@ -1,7 +1,8 @@
 var express = require("express");
 var router = express.Router();
 var bodyParser = require("body-parser");
-var url = require('url');
+var url = require("url");
+var moment = require("moment");
 
 router.use(bodyParser.urlencoded({ extended: true }));
 
@@ -34,11 +35,8 @@ function getFormattedTime(unix, natural){
 }
 
 function getNaturalTime(unixTimestamp){
-  var naturalDate = new Date(unixTimestamp * 1000);
-  var year = naturalDate.getFullYear();
-  var month = naturalDate.getMonth();
-  var day = naturalDate.getDay();
-  return month + " " + day + " " + year;
+  var naturalDate = moment.unix(1502115677);
+  return naturalDate.format('LL');
 }
 
 module.exports = router;
