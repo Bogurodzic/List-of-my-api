@@ -15,10 +15,16 @@ function formatTime(time){
   if(checkTimeFormat(time) === "unix"){
     return getFormattedTime(time, getNaturalTime(time));
   } else if(checkTimeFormat(time) === "natural"){
-    return "natural";
+    return getFormattedTime(getUnixTime(time), time);
   }
 }
-
+/*
+[
+    "December",
+    "7",
+    "2000"
+]
+*/
 function checkTimeFormat(time){
   if (time.split(" ").length === 1){
     return "unix";
@@ -38,5 +44,14 @@ function getNaturalTime(unixTimestamp){
   var naturalDate = moment.unix(1502115677);
   return naturalDate.format('LL');
 }
+
+function getUnixTime(naturalTime){
+  var unixTime = new moment(new Date(naturalTime)).unix();
+  //one day correction
+  var day = 24*3600;
+  return String(unixTime+day);
+}
+
+
 
 module.exports = router;
