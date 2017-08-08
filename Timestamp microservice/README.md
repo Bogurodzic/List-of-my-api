@@ -1,5 +1,6 @@
 #Timestamp microservice
 With this api you can change your time format from natural to unix, or from unix to natural.
+After you pass one time format, it will return both.
 
 ##User stories:
 * I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016)
@@ -9,8 +10,6 @@ With this api you can change your time format from natural to unix, or from unix
 ##Example usage:
 ```
 http://localhost:3000/December 8 2000
-```
-```
 http://localhost:3000/976316400
 ```
 
