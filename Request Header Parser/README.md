@@ -1,5 +1,5 @@
 # Request Header Parser
-With this api you can get the IP address, language and operating system for my browser.
+With this api you can get the IP address, language and operating system for your browser.
 
 ## User stories:
 * I can get the IP address, language and operating system for my browser.
